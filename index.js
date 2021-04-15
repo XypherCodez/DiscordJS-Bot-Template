@@ -12,9 +12,9 @@ const client = new Client({
     fetchAllMembers: true // Cache all members, must have intents enabled.
 }); 
 
-client.commands = new Collection(); //an collection (like a digital map(database)) for all your commands
-client.aliases = new Collection(); //an collection for all your command-aliases
-const cooldowns = new Collection(); //an collection for cooldown commands of each user
+client.commands = new Collection(); //a collection (like a digital map(database)) for all your commands
+client.aliases = new Collection(); //a collection for all your command-aliases
+const cooldowns = new Collection(); //a collection for cooldown commands of each user
 
 client.categories = fs.readdirSync('./commands/'); //categories
 
@@ -27,7 +27,7 @@ eventhandler(client); // This is for event handling
 // Fires each time the bot receives a message
 client.on('message', async message => {
 
-    if (message.author.bot) return;// If the message  author is a bot, return aka ignore the inputs
+    if (message.author.bot) return;// If the message author is a bot, return aka ignore the inputs
     if (!message.guild) return; // If the message is not in a guild (aka in dms), return aka ignore the inputs
 
     if (!message.content.startsWith(prefix) && message.content.startsWith(client.user.id)) return message.reply(`My Prefix is: **\`${prefix}\`**, type \`${prefix}help\` for more information!`); //if the messages is not a command and someone tags the bot, then send an info msg
@@ -50,12 +50,12 @@ client.on('message', async message => {
         
         const now = Date.now(); // Get the current time
         const timestamps = cooldowns.get(command.name); // Get the timestamp of the last used commands
-        const cooldownAmount = (command.cooldown || 1) * 1000; // Get the cooldownamount of the command, if there is no cooldown there will be automatically 1 sec cooldown, so you cannot spam it^^
+        const cooldownAmount = (command.cooldown || 1) * 1000; // Get the cooldown amount of the command, if there is no cooldown there will be automatically 1 sec cooldown, so you cannot spam it^^
       
         if (timestamps.has(message.author.id)) { // If the user is on cooldown
           const expirationTime = timestamps.get(message.author.id) + cooldownAmount; // Get the amount of time he needs to wait until he can run the cmd again
       
-          if (now < expirationTime) { // If he/she is still on cooldonw
+          if (now < expirationTime) { // If the user is still on cooldonw
             const timeLeft = (expirationTime - now) / 1000; // Get the time left on cooldown
             return message.reply( 
               `Please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`
@@ -63,7 +63,7 @@ client.on('message', async message => {
           }
         }
       
-        timestamps.set(message.author.id, now); //if he is not on cooldown, set it to the cooldown
+        timestamps.set(message.author.id, now); //if they are not on cooldown, set it to the cooldown
         setTimeout(() => timestamps.delete(message.author.id), cooldownAmount); //set a timeout function with the cooldown, so it gets deleted later on again
       try {
         command.run(client, message, args, message.author, args.join(" "), prefix); //run the command with the parameters:  client, message, args, user, text, prefix, 
