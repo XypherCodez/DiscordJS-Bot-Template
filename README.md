@@ -62,10 +62,10 @@ Interested in adding more events to your bot? Here's how you can go about doing 
 Step 1.
 - Go to the commands folder on your file explorer.
 
-Step 3.
+Step 2.
 - Create your event file. ex: `messageReactionAdd.js`.<br>[Event Options](https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-channelCreate) 
 
-Step 4.
+Step 3.
 - Paste the code below into your brand new file!
 
 ```js
