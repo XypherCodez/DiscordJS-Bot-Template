@@ -19,3 +19,56 @@ Step 5.
 
 Step 6.
 - Launching the bot, In your terminal run `node index.js` and the client will login, the first few logins might take a bit, so wait for the console to log that your bot is online!
+
+Adding new features:
+
+Commands:
+
+Interested in adding more commands to your bot? Here's how you can go about doing so!
+
+Step 1.
+- Go to the commands folder on your file explorer.
+
+Step 2.
+- Either open an already existing category folder, or create a new one.
+
+Step 3.
+- Create your command file. ex: `backup.js`.
+
+Step 4.
+- Paste the code below into your brand new file!
+
+```js
+module.exports = {
+    //definition
+    name: "", // The name of the command 
+    category: "", // The category this will be listed at, for the help cmd
+    aliases: ["", ""], // Every parameter can be an alias
+    cooldown: 2, // This will set it to a 2 second cooldown
+    usage: "", // This is for the help command for EACH cmd
+    description: "", // The description of the command
+
+    // Running the command with the parameters: client, message, args, user, text, prefix
+    run: async (client, message, args, user, text, prefix) => {
+        // Rest of your code...
+    }
+}
+```
+
+Events:
+
+Interested in adding more events to your bot? Here's how you can go about doing so!
+
+Step 1.
+- Go to the commands folder on your file explorer.
+
+Step 3.
+- Create your event file. ex: `messageReactionAdd.js`.<br>[Event Options](https://discord.js.org/#/docs/main/stable/class/Client?scrollTo=e-channelCreate) 
+
+Step 4.
+- Paste the code below into your brand new file!
+
+```js
+module.exports = client => { // Feel free to add any other parameters needed, or even make this an async function so you can use things such as "await"
+    // Rest of you code here...
+}```
