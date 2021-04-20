@@ -12,7 +12,7 @@ Step 3.
 - Open [Visual Studio Code](https://code.visualstudio.com/download).
 
 Step 4.
-- Create a new project folder, and open the terminal and run the following command `git clone https://github.com/ClemCodez/DiscordJS-Bot-Template` to clone this repository into your visual studio!
+- Create a new project folder, and open the terminal and run the following command `git clone https://github.com/XypherCodez/DiscordJS-Bot-Template` to clone this repository into your visual studio!
 
 Step 5.
 - Updating config variables, open the `config.json` file and between the `""` place your token inside the quotes, now, we need to choose a prefix, this can be anything you want, some common prefixes include `!`, `?`, so try to avoid a prefix that would collude with other bots in your guild!
