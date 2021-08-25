@@ -1,5 +1,7 @@
 # DiscordJS-Bot-Template
 
+**NOTE: THIS IS OUTDATED FOR V12, WILL BE MAKING A UPDATED VERSION.**
+
 Setup Guide:
 
 Step 1.
